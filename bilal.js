@@ -1,10 +1,9 @@
-const config = require('./config');
 const mongoose = require('mongoose');
 
-mongoose.connect(config.mongodb)
+// require direct use kar lein bina variable banaye
+mongoose.connect(require('./config').mongodb)
     .then(() => console.log('✅ MongoDB Connected!'))
     .catch((err) => console.error('❌ MongoDB Error:', err));
-    
 const { Bot, InlineKeyboard, InputFile } = require("grammy");
 const fs = require("fs");
 const path = require("path");
